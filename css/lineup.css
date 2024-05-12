@@ -1,0 +1,61 @@
+.game {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12%;
+}
+
+.gameMenu {
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(255,255,255,0.75);
+    margin: 0 3%;
+    box-shadow: 6px 6px 10px rgba(10, 10, 10, 1);
+}
+
+.gameMenu:hover {
+    background-color:rgba(212, 229, 255, 0.75);
+}
+
+.gameMenu:active {
+    position: relative;
+    top: 6px;
+    left: 6px;
+    box-shadow: none;
+}
+
+.gameMenuButton {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameMenuButton img {
+    width: 80%;
+    height: 60%;
+    border-radius: 5px;
+}
+
+.gameMenuButton p {
+    text-align: center;
+}
+
+.topButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    font-size: 25px;
+}
+
+.topButton a {
+    color: white;
+}

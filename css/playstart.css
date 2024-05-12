@@ -1,0 +1,41 @@
+.playStart {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.playStart button {
+    margin-top: 8%;
+    padding: 15px 25px;
+    width: 15%;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(255, 255, 255, 0.75);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px rgba(10, 10, 10, 1);
+}
+
+.playStart button:hover {
+    background-color: rgba(212, 229, 255, 0.75);
+}
+
+.playStart button:active {
+    position: relative;
+    top: 6px;
+    left: 6px;
+    box-shadow: none;
+}
+
+.lineupButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    font-size: 25px;
+}
+
+.lineupButton a {
+    color: white;
+}

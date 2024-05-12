@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/poker.css" />
+    <link rel="stylesheet" type="text/css" href="css/playstart.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/poker.js"></script>
+</head>
+<body>
+    <div class="mainFrame">
+        <div id="beforePoker" class="playStart">
+            <button id="playStart">Play Start</button>
+            <div class="lineupButton link">
+                <a href="lineup.html">Back</a>
+            </div>
+        </div>
+        <div id="afterPoker" class="afterPoker">
+            <div class="computer">
+                <div class="computer1">
+                    <div class="computerName">COMPUTER 1</div>
+                    <div class="computerDetail">
+                        <div class="computerMoney">
+                            <p id="computer1Money"></p>
+                        </div>
+                        <div class="computerRole">
+                            <p id="computer1Role"></p>
+                        </div>
+                    </div>
+                    <div class="computerCard">
+                        <div id="computer1CardA" class="card"></div>
+                        <img id="computer1CardABack" class="cardBack" src="img/top/tramp_back.jpg" alt="">
+                        <div id="computer1CardB" class="card"></div>
+                        <img id="computer1CardBBack" class="cardBack" src="img/top/tramp_back.jpg" alt="">
+                        <div id="computer1Action" class="action">
+                            <p id="computer1ActionContent"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="computer2">
+                    <div class="computerName">COMPUTER 2</div>
+                    <div class="computerDetail">
+                        <div class="computerMoney">
+                            <p id="computer2Money"></p>
+                        </div>
+                        <div class="computerRole">
+                            <p id="computer2Role"></p>
+                        </div>
+                    </div>
+                    <div class="computerCard">
+                        <div id="computer2CardA" class="card"></div>
+                        <img id="computer2CardABack" class="cardBack" src="img/top/tramp_back.jpg" alt="">
+                        <div id="computer2CardB" class="card"></div>
+                        <img id="computer2CardBBack" class="cardBack" src="img/top/tramp_back.jpg" alt="">
+                        <div id="computer2Action" class="action">
+                            <p id="computer2ActionContent"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="computer3">
+                    <div class="computerName">COMPUTER 3</div>
+                    <div class="computerDetail">
+                        <div class="computerMoney">
+                            <p id="computer3Money"></p>
+                        </div>
+                        <div class="computerRole">
+                            <p id="computer3Role"></p>
+                        </div>
+                    </div>
+                    <div class="computerCard">
+                        <div id="computer3CardA" class="card"></div>
+                        <img id="computer3CardABack" class="cardBack" src="img/top/tramp_back.jpg" alt="">
+                        <div id="computer3CardB" class="card"></div>
+                        <img id="computer3CardBBack" class="cardBack" src="img/top/tramp_back.jpg" alt="">
+                        <div id="computer3Action" class="action">
+                            <p id="computer3ActionContent"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="backButton link">
+                    <a id="backButton">←Back</a>
+                </div>
+                <div class="community">
+                    <div class="data">
+                        <div id="gameNumber" class="gameNumber"></div>
+                        <div id="gameStatus" class="gameStatus"></div>
+                        <div id="minimumAmount" class="minimumAmount"></div>
+                    </div>
+                    <div class="communityCard">
+                        <div id="communityCardA" class="card"></div>
+                        <div id="communityCardB" class="card"></div>
+                        <div id="communityCardC" class="card"></div>
+                        <div id="communityCardD" class="card"></div>
+                        <div id="communityCardE" class="card"></div>
+                    </div>
+                </div>
+                <div class="pot">
+                    <div class="potName">POT AMOUNT</div>
+                    <div class="potMoney">
+                        <p id="potMoney"></p>
+                    </div>
+                </div>
+            </div>
+            <div id="roulette" class="roulette">
+                <button id="rouletteBtn" class="rouletteBtn">Dealer Card Roulette</button>
+                <p id="gameMessage"></p>
+                <button id="gameBtn" class="gameBtn">
+                    <p id="gameAnnounce" class="gameAnnounce"></p>
+                </button>
+            </div>
+            <div class="player">
+                <div class="playerDetail">
+                    <div class="playerName">YOU</div>
+                    <div class="playerMoney">
+                        <p id="playerMoney"></p>
+                    </div>
+                    <div class="playerRole">
+                        <p id="playerRole"></p>
+                    </div>
+                </div>
+                <div class="playerCard">
+                    <div id="playerCardA" class="card"></div>
+                    <div id="playerCardB" class="card"></div>
+                    <div id="playerAction" class="action">
+                        <p id="playerActionContent"></p>
+                        <button id="playerFold" class="selectAction">Fold</button>
+                        <button id="playerCall" class="selectAction">Call</button>
+                        <button id="playerCheck" class="selectAction">Check</button>
+                        <button id="playerRaise" class="selectAction">Raise</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

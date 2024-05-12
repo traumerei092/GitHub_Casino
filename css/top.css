@@ -1,0 +1,16 @@
+.topMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.topMenu h1 {
+    font-size: 130px;
+    color: white;
+    margin: 0;
+}
