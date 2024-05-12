@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slot</title>
+    <link rel="stylesheet" href="./css/slot.css">
+</head>
+<body>
+    <div class="slot-body">
+        <div class="slot-backgrand">
+            <!-- レバー -->
+            <div class="lever-area">
+                <button id="lever-bt" class="lever-button"></button>
+            </div>
+            <!-- slot領域 -->
+            <div class="slot-area">
+                <div class="slot">
+                    <img id="slot1" class="slot-img" src="./img/slot/slot-lille00-img.png" alt="" style="display: none;">
+                    <img id="stop-img1" class="slot-stp-img" src="./img/slot/slot-lille02-img.png" >
+                    <img id="right-img" class="stop-img" src="" alt="" style="display: none;">
+                </div>
+                <div class="slot">
+                    <img id="slot2" class="slot-img" src="./img/slot/slot-lille00-img.png" alt="" style="display: none;">
+                    <img id="stop-img2" class="slot-stp-img" src="./img/slot/slot-lille01-img.png">
+                    <img id="center-img" class="stop-img" src="" alt="" style="display: none;">
+                </div>
+                <div class="slot">
+                    <img id="slot3" class="slot-img" src="./img/slot/slot-lille00-img.png" alt="" style="display: none;">
+                    <img id="stop-img3" class="slot-stp-img" src="./img/slot/slot-lille03-img.png">
+                    <img id="left-img" class="stop-img" src="" alt="" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <!-- slot 停止ボタン -->
+        <div class="button-area">
+            <button id="right-bt"></button>
+            <button id="center-bt"></button>
+            <button id="left-bt"></button>
+        </div>
+        <button id="reset-button" class="rest-bt">reset</button>
+    </div>
+
+
+
+<!-- slot stop時の画像 仮置き-->
+    <img class="stop-img" src="./img/slot/nom7-img.png" alt="">
+    <img class="stop-img" src="./img/slot/big-win-img.png" alt="">
+    <img class="stop-img" src="./img/slot/suika-img.png" alt="">
+    <img class="stop-img" src="./img/slot/berry-img.png" alt="">
+
+
+
+<!-- jquery cdn -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- ボタンでslotをstop -->
+<script>
+    $(document).ready(function(){
+        $("#lever-bt").click(function(){
+            $('#stop-img1').hide();
+            $('#stop-img2').hide();
+            $('#stop-img3').hide();
+            $("#right-img").hide();
+            $("#center-img").hide();
+            $("#left-img").hide();
+            $('#slot1').show();
+            $('#slot2').show();
+            $('#slot3').show();
+        });
+    });
+
+    $(document).ready(function(){
+        $("#right-bt").click(function(){
+            $('#stop-img1').show();
+            $('#slot1').hide();
+            $("#right-img").show();
+            $("#right-img").attr('src', './img/slot/nom7-img.png');
+        });
+    });
+
+    $(document).ready(function () {
+        $("#center-bt").click(function () {
+            $('#stop-img2').show();
+            $('#slot2').hide();
+            $("#center-img").show();
+            $("#center-img").attr('src', './img/slot/nom7-img.png');
+            });
+        });
+
+    $(document).ready(function () {
+        $("#left-bt").click(function () {
+            $('#stop-img3').show();
+            $('#slot3').hide();
+            $("#left-img").show();
+            $("#left-img").attr('src', './img/slot/nom7-img.png');
+        });
+        });
+</script>
+<script>
+    $(document).ready(function(){
+        $("#reset-button").click(function(){
+            location.reload();
+        });
+    });
+</script>
+</body>
+</html>

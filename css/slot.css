@@ -1,0 +1,98 @@
+.slot-body {
+    text-align: center;
+}
+
+.slot-backgrand {
+    /* position: absolute; */
+    height: 300px;
+    outline: auto;
+    position: relative;
+    margin-top: 200px;
+}
+
+.lever-area{
+    position: absolute;
+    outline: auto;
+    height: 80px;
+    width: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-600%,-50%);
+    border-radius: 40px;
+    border-color: red;
+}
+
+.lever-button{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:50%;
+    left:50%;
+    transform: translate(-75%,-75%);
+    border-radius: 40px; 
+    background-color: red;
+}
+
+.slot-area {
+    height: 300px;
+    width: 750px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    outline: auto;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.slot {
+    height: 300px;
+    width: 250px;
+    outline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.slot-img {
+    outline: auto;
+    width: 60%;
+    animation: slot-typ 0.1s linear infinite;
+}
+
+.slot img {
+    position: absolute;
+    outline: auto;
+}
+
+@keyframes slot-typ {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(40%);
+    }
+}
+
+
+button {
+    width: 200px;
+    height: 80px;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 100px / 40px;
+
+}
+
+.rest-bt {
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
