@@ -1,3 +1,24 @@
+table {
+    margin-top: 1vw;
+    margin-left: 1vw;
+    border: 2px solid rgb(140, 140, 140);
+}
+
+table img{
+    display: flex;
+    align-items: center;
+    height: 2.0vw;
+    width: 5.0vw;
+    display: flex;
+    align-items: center;
+}
+
+td {
+    padding: 0.5vw;
+    text-align: left;
+    border: 2px solid rgb(140, 140, 140)
+}
+
 .slot-body {
     text-align: center;
 }
@@ -7,10 +28,10 @@
     height: 300px;
     outline: auto;
     position: relative;
-    margin-top: 200px;
+    margin-top: 10px;
 }
 
-.lever-area{
+.start-area{
     position: absolute;
     outline: auto;
     height: 80px;
@@ -22,7 +43,7 @@
     border-color: red;
 }
 
-.lever-button{
+.start-button{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -43,8 +64,6 @@
     outline: auto;
     display: flex;
     justify-content: center;
-
-
 }
 
 .slot {

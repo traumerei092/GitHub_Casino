@@ -7,57 +7,119 @@
     <link rel="stylesheet" href="./css/slot.css">
 </head>
 <body>
+<!-- 得点テーブル -->
+<table>
+    <tbody>
+        <tr>
+            <td >Prize money</td>
+            <td id="p-money">￥1000</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td>1 Game</td>
+            <td>￥100</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td><img src="./img/slot/prize-7-img.png" alt=""></td>
+            <td>+￥800</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td><img src="./img/slot/prize-win-img.png" alt=""></td>
+            <td>+￥400</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td><img src="./img/slot/prize-suika-img.png" alt=""></td>
+            <td>+￥200</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td><img src="./img/slot/prize-berry-img.png" alt=""></td>
+            <td>+￥100</td>
+        </tr>
+    </tbody>
+</table>
+<!-- slot layout -->
     <div class="slot-body">
         <div class="slot-backgrand">
             <!-- レバー -->
-            <div class="lever-area">
-                <button id="lever-bt" class="lever-button"></button>
+            <div class="start-area">
+                <button id="start-bt" class="start-button"></button>
             </div>
             <!-- slot領域 -->
             <div class="slot-area">
                 <div class="slot">
                     <img id="slot1" class="slot-img" src="./img/slot/slot-lille00-img.png" alt="" style="display: none;">
                     <img id="stop-img1" class="slot-stp-img" src="./img/slot/slot-lille02-img.png" >
-                    <img id="right-img" class="stop-img" src="" alt="" style="display: none;">
+                    <img id="left-img" class="" src="" alt="" style="display: none;">
                 </div>
                 <div class="slot">
                     <img id="slot2" class="slot-img" src="./img/slot/slot-lille00-img.png" alt="" style="display: none;">
                     <img id="stop-img2" class="slot-stp-img" src="./img/slot/slot-lille01-img.png">
-                    <img id="center-img" class="stop-img" src="" alt="" style="display: none;">
+                    <img id="center-img" class="" src="" alt="" style="display: none;">
                 </div>
                 <div class="slot">
                     <img id="slot3" class="slot-img" src="./img/slot/slot-lille00-img.png" alt="" style="display: none;">
                     <img id="stop-img3" class="slot-stp-img" src="./img/slot/slot-lille03-img.png">
-                    <img id="left-img" class="stop-img" src="" alt="" style="display: none;">
+                    <img id="right-img" class="" src="" alt="" style="display: none;">
                 </div>
             </div>
         </div>
         <!-- slot 停止ボタン -->
         <div class="button-area">
-            <button id="right-bt"></button>
-            <button id="center-bt"></button>
             <button id="left-bt"></button>
+            <button id="center-bt"></button>
+            <button id="right-bt"></button>
         </div>
-        <button id="reset-button" class="rest-bt">reset</button>
+        <button id="reset-button" class="rest-bt">Game Reset</button>
     </div>
 
 
 
-<!-- slot stop時の画像 仮置き-->
-    <img class="stop-img" src="./img/slot/nom7-img.png" alt="">
-    <img class="stop-img" src="./img/slot/big-win-img.png" alt="">
-    <img class="stop-img" src="./img/slot/suika-img.png" alt="">
-    <img class="stop-img" src="./img/slot/berry-img.png" alt="">
-
+<!-- slot random選択用の画像 基本は非表示のまま-->
+    <div>
+        <img class="stop-img" src="./img/slot/nom7-img.png" alt="" style="display: none;">
+        <img class="stop-img" src="./img/slot/big-win-img.png" alt="" style="display: none;">
+        <img class="stop-img" src="./img/slot/suika-img.png" alt="" style="display: none;">
+        <img class="stop-img" src="./img/slot/berry-img.png" alt="" style="display: none;">
+    </div>
 
 
 <!-- jquery cdn -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- ボタンでslotをstop -->
+<!-- ボタンでslotを操作。画像の表示非表示を切り替える-->
 <script>
+    const money = 1000;
+    const bonusMap = {
+        "nom7-img.png": 800,
+        "big-win-img.png": 400,
+        "suika-img.png": 200,
+        "berry-img.png": 100
+        };
     $(document).ready(function(){
-        $("#lever-bt").click(function(){
+        $("#start-bt").click(function(){
+        let money = $("#p-money").text(); //テキスト取得  
+        money = money.replace("￥","");  //  ＄のみ削除
+        let rem_money = parseInt(money); // 整数に変換
+        console.log(rem_money);
+        rem_money -= 100; // 1ゲーム分引く
+        $("#p-money").text("￥" + rem_money); // 残高を入力
+    //変数,画像を初期化。スロット２回目以降初期化しないと１回目と同じ結果になる 
+        let leftNom = "";
+        let centNom = ""
+        let rightNom = "";
+        $("#left-img").attr("src",""); 
+        $("#center-img").attr("src", "");
+        $("#right-img").attr("src", "");
+    //ボタンによる表示非表示設定 
             $('#stop-img1').hide();
             $('#stop-img2').hide();
             $('#stop-img3').hide();
@@ -67,35 +129,74 @@
             $('#slot1').show();
             $('#slot2').show();
             $('#slot3').show();
+            console.log(leftNom);
+            console.log(centNom);
+            console.log(rightNom);
         });
-    });
-
-    $(document).ready(function(){
-        $("#right-bt").click(function(){
+        $("#left-bt").click(function(){
             $('#stop-img1').show();
             $('#slot1').hide();
-            $("#right-img").show();
-            $("#right-img").attr('src', './img/slot/nom7-img.png');
+            $("#left-img").show();
+            $("#left-img").attr("src", "");   // 画像を空にする
+            // 左と中のスロットの画像が空なら、ランダムで画像を選択,表示
+            if ($("#left-img").attr('src') === "" && $("#center-img").attr('src') === "") {
+                let randomNom = $(".stop-img");
+                console.log(randomNom);
+                leftNom = Math.floor(Math.random() * 1);
+                console.log(leftNom);
+                $('#left-img').attr('src', randomNom.eq(leftNom).attr('src')).show();
+                // 中に画像があれば、中と同じ画像のsrcを取得し左に表示させる
+            } else if ($("#center-img").attr('src') !== "") {
+                let left_img = $("#center-img").attr("src");
+                console.log(left_img);
+                $('#left-img').attr('src', left_img);
+            }
         });
-    });
-
-    $(document).ready(function () {
         $("#center-bt").click(function () {
             $('#stop-img2').show();
             $('#slot2').hide();
             $("#center-img").show();
-            $("#center-img").attr('src', './img/slot/nom7-img.png');
-            });
+            $("#center-img").attr("src", ""); // 画像を空にする
+            // 左と中のスロットの画像が空なら、ランダムで画像を選択,表示
+            if ($("#left-img").attr('src') === "" && $("#center-img").attr('src') ==="" ){
+            let randomNom = $(".stop-img");
+            console.log(randomNom);
+            centNom = Math.floor(Math.random() * 1);
+            console.log(centNom);
+            $('#center-img').attr('src', randomNom.eq(centNom).attr('src')).show();
+            // 左に画像があれば、左と同じ画像のsrcを取得し中に表示させる
+            } else if ($("#left-img").attr('src') !== ""){
+                let center_img = $("#left-img").attr("src");
+                console.log(center_img);
+                $('#center-img').attr('src' , center_img);
+            }
         });
-
-    $(document).ready(function () {
-        $("#left-bt").click(function () {
+        $("#right-bt").click(function () {
             $('#stop-img3').show();
             $('#slot3').hide();
-            $("#left-img").show();
-            $("#left-img").attr('src', './img/slot/nom7-img.png');
+            $("#right-img").show();
+            $("#right-img").attr("src", "");   // 画像を空にする
+ // 同じのclassの個数を変数にする
+            let randomNom = $(".stop-img");
+            console.log(randomNom);
+            rightNom = Math.floor(Math.random() * 1);
+                        // rightNom = Math.floor(Math.random() * randomNom.length);
+            console.log(rightNom);
+            $('#right-img').attr('src', randomNom.eq(rightNom).attr('src')).show();
+            const leftSrc = $("#left-img").attr('src');
+            const centerSrc = $("#center-img").attr('src');
+            const rightSrc = $("#right-img").attr('src');
+            // 3つの画像がすべて同じであるか確認
+            if (leftSrc === centerSrc && centerSrc === rightSrc) {
+                // 3つの画像が同じである場合、加算数値を取得して加算
+                console.log(bonusMap);
+                const bonus = bonusMap[leftSrc]; // どれか一つの画像のsrcをキーとして加算数値を取得
+                console.log(bonus);
+                rem_money += bonus; // 加算
+                $("#p-money").text("￥" + rem_money); // 金額を更新
+            };
         });
-        });
+    });
 </script>
 <script>
     $(document).ready(function(){
