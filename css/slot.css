@@ -1,7 +1,18 @@
+body {
+    background-image: url(../img/slot/slot.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.table-area {
+    /* outline: auto; */
+    height: 20vh;
+}
+
 table {
-    margin-top: 1vw;
-    margin-left: 1vw;
-    border: 2px solid rgb(140, 140, 140);
+    border: 0cap solid rgb(140, 140, 140);
+    background-color: rgb(200,200,200,0.6);
+    font-weight: bold;
 }
 
 table img{
@@ -20,73 +31,58 @@ td {
 }
 
 .slot-body {
-    text-align: center;
+    margin-top: 0.1%;
+    width: 100%;
+    height: 50vh;
+    /* outline: auto; */
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .slot-backgrand {
-    /* position: absolute; */
-    height: 300px;
-    outline: auto;
-    position: relative;
-    margin-top: 10px;
-}
-
-.start-area{
     position: absolute;
-    outline: auto;
-    height: 80px;
-    width: 80px;
-    top: 50%;
+    top: 60%;
     left: 50%;
-    transform: translate(-600%,-50%);
-    border-radius: 40px;
-    border-color: red;
-}
-
-.start-button{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top:50%;
-    left:50%;
-    transform: translate(-75%,-75%);
-    border-radius: 40px; 
-    background-color: red;
+    transform: translate(-50%, -50%);
+    /* outline: auto; */
+    height: 40vh;
+    width: 40vw;
 }
 
 .slot-area {
-    height: 300px;
-    width: 750px;
-    position: relative;
+    height: 30vh;
+    width: 35vw;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    outline: auto;
+    /* outline: auto; */
     display: flex;
     justify-content: center;
 }
 
 .slot {
-    height: 300px;
-    width: 250px;
-    outline: auto;
+    height: 30vh;
+    width: 12vw;
+    /* outline: auto; */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     overflow: hidden;
     position: relative;
+    background-color: rgba(0, 2, 10, 0.735);
 }
 
 .slot-img {
-    outline: auto;
-    width: 60%;
+    /* outline: auto; */
+    width: 50%;
     animation: slot-typ 0.1s linear infinite;
 }
 
 .slot img {
     position: absolute;
-    outline: auto;
+    width: 50%;
 }
 
 @keyframes slot-typ {
@@ -99,19 +95,65 @@ td {
     }
 }
 
+.select-area {
+    margin-top: 0.5%;
+    height: 10vh;
+    width: 100%;
+    /* outline: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-button {
+    width: 40vw;
+    height: 10vh;
+    /* outline: auto; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 button {
-    width: 200px;
-    height: 80px;
-    margin: 20px;
+    width: 5vw;
+    height: 6vh;
     display: inline-block;
-    border-radius: 100px / 40px;
+    border-radius: 50% / 50%;
+}
 
+.s-r-area {
+    margin-top: 4%;
+    height: 10vh;
+    width: 100%;
+    /* outline: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-rest-bt {
+    width: 40vw;
+    height: 10vh;
+    /* outline: auto; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.start-button {
+    width: 8vw;
+    height: 10vh;
+    border-radius: 50%;
+    background-color: goldenrod;
+    font-weight: bold;
+    font-size: 2vw;
 }
 
 .rest-bt {
-    border-radius: 20px;
-    font-size: 20px;
+    width: 8vw;
+    height: 10vh;
+    border-radius: 50%;
+    background-color: red;
     font-weight: bold;
-    color: red;
+    font-size: 2vw;
 }
