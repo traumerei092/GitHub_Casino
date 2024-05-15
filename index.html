@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>slot</title>
     <link rel="stylesheet" href="./css/slot.css">
+    <link href="https://fonts.googleapis.com/css?family=Galada" rel="stylesheet">
+
 </head>
 <body>
 <!-- 得点テーブル -->
@@ -40,7 +42,7 @@
     <div class="slot-body">
         <div class="slot-backgrand">
             <!-- slot領域 -->
-            <div class="slot-area">
+            <div class="slot-area" >
                 <div class="slot">
                     <img id="slot1" class="slot-img" src="./img/slot/slot-lille00-img.png" alt="" style="display: none;">
                     <img id="stop-img1" class="slot-stp-img" src="./img/slot/slot-lille02-img.png" >
@@ -58,8 +60,9 @@
                 </div>
             </div>
         </div>
-
+        <img id="result" class="result-img" src="" alt="" style="display: none;">
     </div>
+    <!-- slot button -->
     <div class="select-area">
         <div class="select-button">
             <button id="left-bt">Push</button>
@@ -68,15 +71,13 @@
             </div>
         </div>
     </div>
+
     <div  class="s-r-area">
         <div class="start-rest-bt">
             <button id="start-bt" class="start-button">start</button>
             <button id="reset-button" class="rest-bt">reset</button>
         </div>
     </div>
-    <!-- slot 停止ボタン -->
-
-
 
 <!-- slot random選択用の画像 基本は非表示のまま-->
     <div>
@@ -125,6 +126,7 @@
             $('#slot1').show();
             $('#slot2').show();
             $('#slot3').show();
+            $("#result").hide();
             console.log(leftNom);
             console.log(centNom);
             console.log(rightNom);
@@ -134,6 +136,7 @@
             $('#slot1').hide();
             $("#left-img").show();
             $("#left-img").attr("src", "");   // 画像を空にする
+
             // 左と中のスロットの画像が空なら、ランダムで画像を選択,表示
             if ($("#left-img").attr('src') === "" && $("#center-img").attr('src') === "") {
                 let randomNom = $(".stop-img");
@@ -142,7 +145,8 @@
                 // leftNom = Math.floor(Math.random() * randomNom.length);
                 console.log(leftNom);
                 $('#left-img').attr('src', randomNom.eq(leftNom).attr('src')).show();
-                // 中に画像があれば、中と同じ画像のsrcを取得し左に表示させる
+
+            // 中に画像があれば、中と同じ画像のsrcを取得し左に表示させる
             } else if ($("#center-img").attr('src') !== "") {
                 let left_img = $("#center-img").attr("src");
                 console.log(left_img);
@@ -152,9 +156,12 @@
             const centerSrc = $("#center-img").attr('src');
             const rightSrc = $("#right-img").attr('src');
             console.log(rightSrc);
+
             // 3つの画像がすべて同じであるか確認
             if (leftSrc === centerSrc && centerSrc === rightSrc) {
                 // 3つの画像が同じである場合、加算数値を取得して加算
+                $("#result").delay(100).fadeIn(500).fadeOut(3000);
+                $("#result").attr('src', './img/slot/win.png');
                 console.log(bonusMap);
                 const bonus = bonusMap[leftSrc]; // どれか一つの画像のsrcをキーとして加算数値を取得
                 console.log(bonus);
@@ -171,6 +178,7 @@
             $('#slot2').hide();
             $("#center-img").show();
             $("#center-img").attr("src", ""); // 画像を空にする
+
             // 左と中のスロットの画像が空なら、ランダムで画像を選択,表示
             if ($("#left-img").attr('src') === "" && $("#center-img").attr('src') ==="" ){
             let randomNom = $(".stop-img");
@@ -178,6 +186,7 @@
             centNom = Math.floor(Math.random() * randomNom.length);
             console.log(centNom);
             $('#center-img').attr('src', randomNom.eq(centNom).attr('src')).show();
+
             // 左に画像があれば、左と同じ画像のsrcを取得し中に表示させる
             } else if ($("#left-img").attr('src') !== ""){
                 let center_img = $("#left-img").attr("src");
@@ -188,8 +197,11 @@
             const centerSrc = $("#center-img").attr('src');
             const rightSrc = $("#right-img").attr('src');
             console.log(rightSrc);
+
             // 3つの画像がすべて同じであるか確認
             if (leftSrc === centerSrc && centerSrc === rightSrc) {
+                $("#result").delay(500).fadeIn(500).fadeOut(3000);
+                $("#result").attr('src', './img/slot/win.png');
                 // 3つの画像が同じである場合、加算数値を取得して加算
                 console.log(bonusMap);
                 const bonus = bonusMap[leftSrc]; // どれか一つの画像のsrcをキーとして加算数値を取得
@@ -202,6 +214,7 @@
                 $("#p-money").text("￥" + rem_money); // 金額を更新
             };
         });
+        // 右ボタンは常にランダムで画像を選択
         $("#right-bt").click(function () {
             $('#stop-img3').show();
             $('#slot3').hide();
@@ -217,8 +230,11 @@
             const centerSrc = $("#center-img").attr('src');
             const rightSrc = $("#right-img").attr('src');
             console.log(rightSrc);
+
             // 3つの画像がすべて同じであるか確認
             if (leftSrc === centerSrc && centerSrc === rightSrc) {
+                $("#result").delay(100).fadeIn(500).fadeOut(3000);
+                $("#result").attr('src', './img/slot/win.png');
                 // 3つの画像が同じである場合、加算数値を取得して加算
                 console.log(bonusMap);
                 const bonus = bonusMap[leftSrc]; // どれか一つの画像のsrcをキーとして加算数値を取得
