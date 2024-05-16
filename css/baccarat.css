@@ -24,7 +24,7 @@
     width: 100%;
     height: 35%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -50,6 +50,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: rgb(0, 0, 0, 0.7);
+    border-radius: 10px;
 }
 
 .banker {
@@ -74,6 +76,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: rgb(0, 0, 0, 0.7);
+    border-radius: 10px;
 }
 
 .card {
@@ -636,4 +640,15 @@
 
 #resultBanker {
     font-size: 24px;
+}
+
+.topButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    font-size: 25px;
+}
+
+.topButton a {
+    color: white;
 }
