@@ -4,8 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/baccarat.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/baccarat.js"></script>
 </head>
 <body>
-    
+    <div class="mainFrame baccarat">
+        <div id="resultPop" class="popup">
+            <div class="popupContent">
+                <P id="result"></P>
+                <p id="resultPlayer"></p>
+                <p id="resultBanker"></p>
+                <div class="popupButton">
+                    <button id="reBetButton" class="dealButton">REBET</button>
+                    <button id="resetBetButton" class="dealButton">RESET</button>
+                </div>
+            </div>
+        </div>
+        <div class="baccaratTitle">
+            BACCARAT
+        </div>
+        <div class="middle">
+            <div class="player">
+                <p>PLAYER</p>
+                <div class="playerCard">
+                    <img id="playerCardA" src="" class="card"></img>
+                    <img id="playerCardB" src="" class="card"></img>
+                    <img id="playerCardC" src="" class="card"></img>
+                </div>
+            </div>
+            <div class="banker">
+                <p>BANKER</p>
+                <div class="bankerCard">
+                    <img id="bankerCardA" src="" class="card"></img>
+                    <img id="bankerCardB" src="" class="card"></img>
+                    <img id="bankerCardC" src="" class="card"></img>
+                </div>
+            </div>
+        </div>
+        <div class="under">
+            <div class="money">
+                <div class="moneyContent">
+                    <p class="credit">CREDIT</p>
+                    <div id="credit" class="amount"></div>
+                </div>
+                <div class="moneyContent">
+                    <p class="win">WIN</p>
+                    <div id="win" class="amount"></div>
+                </div>
+            </div>
+            <div class="bet">
+                <div class="betDetail">
+                    <div id="betButton" class="betButton">
+                        <div class="buttonFlame">
+                            <button href="" id="bankerButton" class="bankerBetButton">BANKER</button>
+                        </div>
+                        <div class="buttonFlame">
+                            <button href="" id="playerButton" class="playerBetButton">PLAYER</button>
+                        </div>
+                        <div class="buttonFlame">
+                            <button href="" id="tieButton" class="tieBetButton">TIE</button>
+                        </div>
+                    </div>
+                    <div id="betMoney" class="betMoney">
+                        <div class="betMoneyFlame">
+                            <div id="bankerBet" class="betAmount"></div>
+                        </div>
+                        <div class="betMoneyFlame">
+                            <div id="playerBet" class="betAmount"></div>
+                        </div>
+                        <div class="betMoneyFlame">
+                            <div id="tieBet" class="betAmount"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal">
+                    <button id="dealButton" class="dealButton">DEAL</button>
+                    <button id="resetButton" class="dealButton">RESET</button>
+                </div>
+                <div id="betAlert" class="betAlert">
+                    <p>Please Bet</p>
+                </div>
+            </div>
+            <div class="chip">
+                <div class="chipBox">
+                    <div class="chipBoxUp">
+                        <button id="dollar1" class="chipBoxLeft box1" type="button">
+                            <img src="img/chip/$1.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar1 chipAmount">$1</p>
+                        </button>
+                        <button id="dollar5" class="chipBoxCenter box2" type="button">
+                            <img src="img/chip/$5.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar2 chipAmount">$5</p>
+                        </button>
+                        <button id="dollar10" class="chipBoxRight box3" type="button">
+                            <img src="img/chip/$10.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar3 chipAmount">$10</p>
+                        </button>
+                    </div>
+                    <div class="chipBoxMiddle">
+                        <button id="dollar50" class="chipBoxLeft box4" type="button">
+                            <img src="img/chip/$50.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar4 chipAmount">$50</p>
+                        </button>
+                        <button id="dollar100" class="chipBoxCenter box5" type="button">
+                            <img src="img/chip/$100.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar5 chipAmount">$100</p>
+                        </button>
+                        <button id="dollar500" class="chipBoxRight box6" type="button">
+                            <img src="img/chip/$500.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar6 chipAmount">$500</p>
+                        </button>
+                    </div>
+                    <div class="chipBoxUnder">
+                        <button id="dollar1K" class="chipBoxLeft box7" type="button">
+                            <img src="img/chip/$1K.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar7 chipAmount">$1K</p>
+                        </button>
+                        <button id="dollar5K" class="chipBoxCenter box8" type="button">
+                            <img src="img/chip/$5K.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar8 chipAmount">$5K</p>
+                        </button>
+                        <button id="dollar10K"class="chipBoxRight box9" type="button">
+                            <img src="img/chip/$10K.png" alt="" class="chipPhoto">
+                            <p class="chipPhotoDollar9 chipAmount">$10K</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
