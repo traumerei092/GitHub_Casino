@@ -34,7 +34,7 @@ slotゲームを担当
 
 ## ⑦質問・疑問・感想、シェアしたいこと等なんでも
 - [感想]
- pull requestやapproveなどの機能があることを
+ pull requestやapproveなどの機能をVScodeからできそうなことに
  作業終了後に気づいたので、今後試してみたい。
 
 以上。
