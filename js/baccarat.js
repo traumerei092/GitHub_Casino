@@ -245,6 +245,8 @@ function dealCards() {
     $("#resultPlayer").text("PLAYER：" + playerSum);
     $("#resultBanker").text("BANKER：" + bankerSum);
 
+    resultMoney(playerSum, bankerSum);
+
 }
 
 // 「DEAL」ボタンを押してカードをシャッフルして配布する
@@ -294,17 +296,17 @@ function resultMoney(player, banker) {
     if (player > banker) {
         credit = credit + betPlayerMoney * 2;
         money = betPlayerMoney * 2 - betBankerMoney - betPlayerMoney - betTieMoney;
-        $("#win").text(money);
+        $("#win").delay(7000).text(money);
     } else if (player < banker) {
         credit = credit + betBankerMoney * 2;
         money = betBankerMoney * 2 - betBankerMoney - betPlayerMoney - betTieMoney;
-        $("#win").text(money);
+        $("#win").delay(7000).text(money);
     } else if (player == banker) {
         credit = credit + betTieMoney * 8;
         money = betTieMoney * 8 - betBankerMoney - betPlayerMoney - betTieMoney;
-        $("#win").text(money);
+        $("#win").delay(7000).text(money);
     }
-    $("#credit").text(credit);
+    $("#credit").delay(7000).text(credit);
 }
 
 //「reBetButton」を押したとき
